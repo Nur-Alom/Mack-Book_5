@@ -30,39 +30,40 @@
                     inspired by their Apple A14 Bionic chip.
                 </p>
                 <p class="m-1 mt-4"><strong>Memory</strong></p>
-                <button class="hover border-1 border-secondary rounded">8GB unified memory</button>
-                <button class="hover border-1 border-secondary rounded">16GB unified memory</button>
+                <button id="8GB" class="hover border-1 border-secondary rounded">8GB unified memory</button>
+                <button id="16GB" class="hover border-1 border-secondary rounded">16GB unified memory</button>
                 <p class="m-1 mt-4"><strong>Storage</strong></p>
-                <button class="hover border-1 border-secondary rounded">256GB SSD Storage</button>
-                <button class="hover border-1 border-secondary rounded">512GB SSD Storage</button>
-                <button class="hover border-1 border-secondary rounded">1TB SSD Storage</button>
+                <button id="256GB" class="hover border-1 border-secondary rounded">256GB SSD Storage</button>
+                <button id="512GB" class="hover border-1 border-secondary rounded">512GB SSD Storage</button>
+                <button id="1TB" class="hover border-1 border-secondary rounded">1TB SSD Storage</button>
                 <p class="m-1 mt-4"><strong>Choose your delivery option</strong></p>
-                <button class="hover border-1 border-secondary rounded">Friday, Aug 25 FREE Prime
+                <button id="late-delivery" class="hover border-1 border-secondary rounded">Friday, Aug 25 FREE Prime
                     Delivery</button>
-                <button class="hover border-1 border-secondary rounded">Friday, Aug 21 Delivery Charge
+                <button id="fast-delivery" class="hover border-1 border-secondary rounded">Friday, Aug 21 Delivery
+                    Charge
                     $20</button>
                 <table class="table mt-5 w-75">
                     <tbody>
                         <tr>
                             <td><strong>Best Price</strong></td>
-                            <td>$ <span>1299</span></td>
+                            <td>$ <span id="main-price">1299</span></td>
                         </tr>
                         <tr>
                             <td><strong>Extra Memory Cost</strong></td>
-                            <td>$ <span>00</span></td>
+                            <td>$ <span id="memory-cost">0</span></td>
                         </tr>
                         <tr>
                             <td><strong>Extra Storage Cost</strong></td>
-                            <td>$ <span>00</span></td>
+                            <td>$ <span id="storage-cost">0</span></td>
                         </tr>
                         <tr>
                             <td><strong>Delivery Cost</strong></td>
-                            <td>$ <span>00</span></td>
+                            <td>$ <span id="delivery-cost">0</span></td>
                         </tr>
                     </tbody>
                     <tr>
-                        <th scope="col">Total Price</th>
-                        <td scope="col">$ <span>1299</span></td>
+                        <th class="cols">Total Price</th>
+                        <td class="cols">$ <span id="sub-total">1299</span></td>
                     </tr>
                 </table>
                 <p class="m-0 mt-4"><strong>Add Promo Code</strong></p>
