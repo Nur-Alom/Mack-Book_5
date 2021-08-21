@@ -81,13 +81,14 @@ function subTotal() {
     document.getElementById('sub-total').innerText = subTotal + 1299;
 }
 
+//  5. inTotal Calculation.
+
 function total() {
     const memoryTotal = getTotalPrice('memory');
     const storageTotal = getTotalPrice('storage');
     const deliveryTotal = getTotalPrice('delivery');
     const subTotal = memoryTotal + storageTotal + deliveryTotal;
-    document.getElementById('Total').innerText = subTotal + 1299;
+    document.getElementById('total').innerText = subTotal + 1299;
 }
-
 
 

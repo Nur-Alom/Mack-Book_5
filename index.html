@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Book Pro!</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/apple.png" type="image/x-icon">
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="style/style.css">
     <!-- Bootstrap CDN Link -->
@@ -18,6 +20,7 @@
 </head>
 
 <body>
+    <!-- UI and User Instruction -->
     <section class="container">
         <div class="d-flex justify-content-between my-5">
             <div>
@@ -67,15 +70,17 @@
                     </tr>
                 </table>
                 <p class="m-0 mt-4"><strong>Add Promo Code</strong></p>
-                <input class="border-1 rounded" type="text" placeholder="Inter your Code">
+                <input id="promo-input" class="border-1 rounded" type="text" placeholder="Inter your Code">
                 <button id="submit" class="bg-danger border-0 py-1 px-3 rounded text-white" type="submit">Apply</button>
             </div>
         </div>
     </section>
+
+    <!-- inTotal Calculation -->
     <section class="container">
-        <hr class="">
+        <hr>
         <p>
-        <h1 class="text-center mb-5">Total: $ <span id="Total">1299</span></h1>
+        <h1 class="text-center mb-5">Total: $ <span id="total">1299</span></h1>
         </p>
     </section>
     <script src="js/main.js"></script>
