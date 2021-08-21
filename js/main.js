@@ -1,73 +1,93 @@
 
-// 1. Memory Part
-document.getElementById('8GB').addEventListener('click', function () {
-    const memoryCost8gb = document.getElementById('memory-cost');
-    const newCost8gb = memoryCost8gb.innerText;
-    const totalMemoryCost = newCost8gb.innerText = 0;
-    document.getElementById('memory-cost').innerText = totalMemoryCost;
-});
+// 1. Memory Part.
 
+function totalMemoryAmount(depending1) {
+    if (depending1 == true) {
+        document.getElementById('memory-cost').innerText = 0;
+    }
+    else {
+        document.getElementById('memory-cost').innerText = 180;
+    }
+    subTotal();
+    total();
+}
+document.getElementById('8GB').addEventListener('click', function () {
+    totalMemoryAmount(true);
+});
 document.getElementById('16GB').addEventListener('click', function () {
-    const memoryCost16gb = document.getElementById('memory-cost');
-    const newCost16gb = memoryCost16gb.innerText;
-    const totalMemoryCost = newCost16gb.innerText = 180;
-    document.getElementById('memory-cost').innerText = totalMemoryCost;
+    totalMemoryAmount(false);
 });
 
 
 // 2. Storage Part.
+
+function totalStorageAmount(depending2) {
+    if (depending2 == 1) {
+        document.getElementById('storage-cost').innerText = 100;
+    }
+    else if (depending2 == 2) {
+        document.getElementById('storage-cost').innerText = 180;
+    }
+    else {
+        document.getElementById('storage-cost').innerText = 0;
+    }
+    subTotal();
+    total();
+}
 document.getElementById('256GB').addEventListener('click', function () {
-    const storageCost = document.getElementById('storage-cost');
-    const newStorageCost = storageCost.innerText;
-    const totalStorageCost = newStorageCost.innerText = 0;
-    document.getElementById('storage-cost').innerText = totalStorageCost;
+    totalStorageAmount();
 });
-
-
 document.getElementById('512GB').addEventListener('click', function () {
-    const storageCost = document.getElementById('storage-cost');
-    const newStorageCost = storageCost.innerText;
-    const totalStorageCost = newStorageCost.innerText = 100;
-    document.getElementById('storage-cost').innerText = totalStorageCost;
+    totalStorageAmount(1);
 });
-
-
 document.getElementById('1TB').addEventListener('click', function () {
-    const storageCost = document.getElementById('storage-cost');
-    const newStorageCost = storageCost.innerText;
-    const totalStorageCost = newStorageCost.innerText = 180;
-    document.getElementById('storage-cost').innerText = totalStorageCost;
+    totalStorageAmount(2);
 });
 
 
 // 3. Delivery Option.
 
+function totalDeliveryAmount(depending3) {
+    if (depending3 == true) {
+        document.getElementById('delivery-cost').innerText = 0;
+    }
+    else {
+        document.getElementById('delivery-cost').innerText = 20;
+    }
+    subTotal();
+    total();
+}
 document.getElementById('late-delivery').addEventListener('click', function () {
-    const deliveryCost = document.getElementById('delivery-cost');
-    const newDeliveryCost = deliveryCost.innerText;
-    const totalDeliveryCost = newDeliveryCost.innerText = 0;
-    document.getElementById('delivery-cost').innerText = totalDeliveryCost;
+    totalDeliveryAmount(true);
 });
-
-
 document.getElementById('fast-delivery').addEventListener('click', function () {
-    const deliveryCost = document.getElementById('delivery-cost');
-    const newDeliveryCost = deliveryCost.innerText;
-    const totalDeliveryCost = newDeliveryCost.innerText = 20;
-    document.getElementById('delivery-cost').innerText = totalDeliveryCost;
+    totalDeliveryAmount(false);
 });
 
 
+// 4. Total calculation
 
+function getTotalPrice(added) {
+    const productPrice = document.getElementById(added + '-cost');
+    const product = parseInt(productPrice.innerText);
+    return product;
+}
 
-// document.getElementById('sub-total');
-const mainPrice = parseInt(document.getElementById('main-price').innerText);
-const totalMemoryPrice = parseInt(totalMemoryCost.innerText);
-const totalStoragePrice = parseInt(totalStorageCost.innerText);
-const totalDeliveryPrice = parseInt(totalDeliveryCost.innerText);
+function subTotal() {
+    const memoryTotal = getTotalPrice('memory');
+    const storageTotal = getTotalPrice('storage');
+    const deliveryTotal = getTotalPrice('delivery');
+    const subTotal = memoryTotal + storageTotal + deliveryTotal;
+    document.getElementById('sub-total').innerText = subTotal + 1299;
+}
 
-const subTotalPrice = mainPrice + totalMemoryPrice + totalStoragePrice + totalDeliveryPrice;
+function total() {
+    const memoryTotal = getTotalPrice('memory');
+    const storageTotal = getTotalPrice('storage');
+    const deliveryTotal = getTotalPrice('delivery');
+    const subTotal = memoryTotal + storageTotal + deliveryTotal;
+    document.getElementById('Total').innerText = subTotal + 1299;
+}
 
-document.getElementById('sub-total').innerText = subTotalPrice;
 
 
