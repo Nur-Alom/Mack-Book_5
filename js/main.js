@@ -84,11 +84,31 @@ function subTotal() {
 //  5. inTotal Calculation.
 
 function total() {
+    const mainPrice = 1299;
     const memoryTotal = getTotalPrice('memory');
     const storageTotal = getTotalPrice('storage');
     const deliveryTotal = getTotalPrice('delivery');
-    const subTotal = memoryTotal + storageTotal + deliveryTotal;
-    document.getElementById('total').innerText = subTotal + 1299;
+    const subTotal = mainPrice + memoryTotal + storageTotal + deliveryTotal;
+    document.getElementById('total').innerText = subTotal;
 }
+
+
+//  6. Discount Calculation.
+
+document.getElementById('submit').addEventListener('click', function () {
+    const input = document.getElementById('promo-input').value;
+    const total = document.getElementById('total').innerText;
+    const discount = 80;
+
+    function percentCalculation(total, discount) {
+        if (input == 'stevekaku') {
+            const discountTotal = (parseFloat(total) * parseFloat(discount)) / 100;
+            return parseFloat(discountTotal);
+        }
+    }
+    result = percentCalculation(total, discount);
+    document.getElementById('total').innerText = result;
+});
+
 
 
