@@ -97,11 +97,11 @@ function total() {
 
 document.getElementById('submit').addEventListener('click', function () {
     const input = document.getElementById('promo-input').value;
-    const total = document.getElementById('total').innerText;
+    const total = document.getElementById('sub-total').innerText;
     const discount = 80;
 
     function percentCalculation(total, discount) {
-        if (input == 'stevekaku') {
+        if (input === 'stevekaku') {
             const discountTotal = (parseFloat(total) * parseFloat(discount)) / 100;
             return parseFloat(discountTotal);
         }
